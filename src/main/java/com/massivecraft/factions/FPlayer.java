@@ -229,6 +229,7 @@ public interface FPlayer extends EconomyParticipator {
     public boolean isOffline();
 
     public void setId(String id);
+<<<<<<< HEAD
 
     // -------------------------------
     // Warmups
