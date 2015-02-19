@@ -7,6 +7,7 @@ import com.massivecraft.factions.integration.Econ;
 import com.massivecraft.factions.struct.Permission;
 import com.massivecraft.factions.struct.Relation;
 import com.massivecraft.factions.struct.Role;
+import com.massivecraft.factions.tax.TaxFaction;
 import com.massivecraft.factions.tax.TaxRules;
 import com.massivecraft.factions.util.LazyLocation;
 import com.massivecraft.factions.util.MiscUtil;
@@ -46,6 +47,7 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
     private long lastDeath;
 
     protected TaxRules taxRules;
+    protected transient TaxFaction taxFaction;
     
     public HashMap<String, List<String>> getAnnouncements() {
         return this.announcements;
@@ -816,5 +818,11 @@ public abstract class MemoryFaction implements Faction, EconomyParticipator {
     public TaxRules getTaxRules() {
     	return taxRules;
 >>>>>>> Warn players if they can't afford tax
+    }
+    
+    @Override
+    public TaxFaction getTaxFaction() {
+    	if (taxFaction == null) taxFaction = new TaxFaction(this);
+    	return taxFaction;
     }
 }

@@ -6,6 +6,8 @@ import com.massivecraft.factions.struct.ChatMode;
 import com.massivecraft.factions.struct.Relation;
 import com.massivecraft.factions.struct.Role;
 import com.massivecraft.factions.util.WarmUpUtil;
+import com.massivecraft.factions.tax.TaxPlayer;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -230,6 +232,7 @@ public interface FPlayer extends EconomyParticipator {
 
     public void setId(String id);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // -------------------------------
     // Warmups
@@ -244,5 +247,7 @@ public interface FPlayer extends EconomyParticipator {
     public void stopWarmup();
 
     public void clearWarmup();
+    
+    public TaxPlayer getTaxPlayer();
 
 }

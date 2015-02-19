@@ -14,9 +14,14 @@ import com.massivecraft.factions.struct.ChatMode;
 import com.massivecraft.factions.struct.Permission;
 import com.massivecraft.factions.struct.Relation;
 import com.massivecraft.factions.struct.Role;
+import com.massivecraft.factions.tax.TaxPlayer;
 import com.massivecraft.factions.util.RelationUtil;
+<<<<<<< HEAD
 import com.massivecraft.factions.util.WarmUpUtil;
 import com.massivecraft.factions.zcore.util.TL;
+=======
+
+>>>>>>> Cache TaxPlayer and TaxFaction in FPlayer and Faction
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -93,12 +98,20 @@ public abstract class MemoryFPlayer implements FPlayer {
     // FIELD: loginPvpDisabled
     protected transient boolean loginPvpDisabled;
 
+<<<<<<< HEAD
     protected boolean spyingChat = false;
     protected boolean showScoreboard = true;
 
     protected WarmUpUtil.Warmup warmup;
     protected int warmupTask;
 
+=======
+    // FIELD: chatSpy
+    protected transient boolean spyingChat = false;
+    
+    protected transient TaxPlayer taxPlayer;
+    
+>>>>>>> Cache TaxPlayer and TaxFaction in FPlayer and Faction
     public Faction getFaction() {
         if (this.factionId == null) {
             this.factionId = "0";
@@ -887,6 +900,7 @@ public abstract class MemoryFPlayer implements FPlayer {
     public void setId(String id) {
         this.id = id;
     }
+<<<<<<< HEAD
 
     @Override
     public void clearWarmup() {
@@ -920,3 +934,12 @@ public abstract class MemoryFPlayer implements FPlayer {
         this.warmupTask = taskId;
     }
 }
+=======
+    
+    @Override
+    public TaxPlayer getTaxPlayer() {
+    	if (taxPlayer != null) taxPlayer = new TaxPlayer(this);
+    	return this.taxPlayer;
+    }
+}
+>>>>>>> Cache TaxPlayer and TaxFaction in FPlayer and Faction
