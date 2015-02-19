@@ -2,6 +2,7 @@ package com.massivecraft.factions.cmd;
 
 import com.massivecraft.factions.Conf;
 import com.massivecraft.factions.zcore.util.TL;
+import com.massivecraft.factions.tax.cmd.CmdTax;
 
 import java.util.Collections;
 
@@ -68,6 +69,8 @@ public class FCmdRoot extends FCommand {
     public CmdClaimLine cmdClaimLine = new CmdClaimLine();
     public CmdTop cmdTop = new CmdTop();
 
+    public CmdTax cmdTax = new CmdTax();
+    
     public FCmdRoot() {
         super();
         this.aliases.addAll(Conf.baseCommandAliases);
@@ -149,6 +152,7 @@ public class FCmdRoot extends FCommand {
         this.addSubCommand(this.cmdLogins);
         this.addSubCommand(this.cmdClaimLine);
         this.addSubCommand(this.cmdTop);
+        this.addSubCommand(this.cmdTax);
     }
 
     @Override
